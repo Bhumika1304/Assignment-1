@@ -6,56 +6,161 @@
     <title>Bhumika K S - Personal Website</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background: linear-gradient(to bottom, #ffffff, #e6f7ff);
+            color: #333;
+            scroll-behavior: smooth;
         }
+
         header {
-            background-color: #333;
-            color: #fff;
+            background-color: #1c2331;
+            color: #ffffff;
             padding: 1rem;
             text-align: center;
-            font-size: 30px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         nav ul {
             list-style-type: none;
             padding: 0;
+            margin: 0;
         }
+
         nav ul li {
             display: inline;
-            margin-right: 1rem;
+            margin-right: 1.5rem;
         }
+
         nav ul li a {
-            color: #fff;
+            color: #ffcc00;
             text-decoration: none;
+            font-weight: bold;
         }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+            color: #ff8800;
+        }
+
         main {
+            margin-top: 80px;
             padding: 2rem;
         }
+
         footer {
-            background-color: #333;
-            color: #fff;
+            background-color: #1c2331;
+            color: #ffffff;
             text-align: center;
             padding: 1rem;
-            position: absolute;
+            position: fixed;
             width: 100%;
             bottom: 0;
+            font-size: 0.9rem;
         }
+
         .content {
-            display: none;
+            margin-bottom: 3rem;
+            padding: 1.5rem;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        #home {
-            display: block;
+
+        h1, h2, h3 {
+            color: #1c2331;
+            font-weight: bold;
+        }
+
+        p, ul {
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        hr {
+            border: 1px solid #ddd;
+            margin: 1.5rem 0;
+        }
+
+        a {
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #ff8800;
+        }
+
+        .profile-pic {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .profile-pic img {
+            border-radius: 50%;
+            border: 5px solid #1c2331;
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .scroller {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            background-color: #ffcc00;
+            color: #1c2331;
+            border: none;
+            padding: 12px 16px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            display: none;
+            transition: all 0.3s ease;
+        }
+
+        .scroller:hover {
+            background-color: #ff8800;
+            color: #ffffff;
         }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('nav a').click(function(e) {
+        $(document).ready(function () {
+            $('nav a').click(function (e) {
                 e.preventDefault();
                 var target = $(this).attr('href');
-                $('.content').hide();
-                $(target).show();
+                $('html, body').animate({
+                    scrollTop: $(target).offset().top - 80
+                }, 800);
+            });
+
+            // Scroll to top functionality
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 300) {
+                    $('.scroller').fadeIn();
+                } else {
+                    $('.scroller').fadeOut();
+                }
+            });
+
+            $('.scroller').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 800);
             });
         });
     </script>
@@ -72,49 +177,55 @@
     </header>
     <main>
         <div id="home" class="content">
+            <div class="profile-pic">
+                <img src="C:\Users\bhumi\OneDrive\Desktop\ass 1\photo.png" alt="Profile Picture">
+            </div>
             <h1>Welcome to My Personal Website</h1>
             <p>This website contains my resume and bio-data.</p>
             <p>Explore to know more about my professional journey and personal details.</p>
         </div>
+        <hr>
         <div id="resume" class="content">
             <h1>My Resume</h1>
             <h2>Current Education</h2>
-            <p>I am Currently pursuing a Bachelor of Engineering (B.E) in Computer Science and Engineering (CSE), 3rd year at Bapuji Institute of engineering and Technology.</p>
+            <p>I am currently pursuing a Bachelor of Engineering (B.E) in Computer Science and Engineering (CSE), 3rd year at Bapuji Institute of Engineering and Technology.</p>
+            <hr>
             <h2>Education</h2>
-            Pre schooling(LKG&UKG) and 
-            Schooling (class 1-10) Sri Taralabalu Central School, Davangere.<br>
-            PUC at DR Thimmareddy Foundation PU Girls College.
+            <p>Pre-schooling (LKG & UKG) and schooling (class 1-10): Sri Taralabalu Central School, Davangere.</p>
+            <p>PUC: DR Thimmareddy Foundation PU Girls College.</p>
             <h3>Bachelor of Engineering in Computer Science</h3>
             <p>BIET Davangere, 2022-2026</p>
+            <hr>
             <h3>Project: Agriculture Management System</h3>
-            <p>Languages used : HTML,CSS,JS,php and mysql </p>
+            <p>Languages used: HTML, CSS, JavaScript, PHP, and MySQL</p>
             <ul>
-                <li>Developed a agriculture management system using php and MySQL.</li>
-                <li>Worked on front-end .</li>
-            </ul>  
+                <li>Developed an agriculture management system using PHP and MySQL.</li>
+                <li>Worked on the front-end design.</li>
+            </ul>
         </div>
         <div id="bio" class="content">
             <h1>My Bio-data</h1>
             <h2>Personal Information</h2>
             <p>Name: Bhumika K S</p>
             <p>Date of Birth: December 13, 2004</p>
-            <p>Address: #1905/45 Vidhyanagar 5th Cross, Davangere, Karnataka, India</p>
+            <p>Address: #1905/45, Vidhyanagar 5th Cross, Davangere, Karnataka, India</p>
             <p>Email: bhumikaks1312@gmail.com</p>
             <h2>Skills</h2>
             <ul>
                 <li>Programming Languages: Java, Python, C (basics)</li>
-                <li>Web Technologies: HTML, CSS, JS</li>
+                <li>Web Technologies: HTML, CSS, JavaScript</li>
             </ul>
             <h2>Hobbies</h2>
             <ul>
-                <li>Playing Sports like Cricket, Badmintton and Basketball</li>
+                <li>Playing sports like cricket, badminton, and basketball</li>
                 <li>Solving puzzles</li>
                 <li>Listening to songs</li>
             </ul>
         </div>
     </main>
     <footer>
-        <p>&copy; 2024  Bhumika K S</p>
+        <p>&copy; 2024 Bhumika K S | All Rights Reserved</p>
     </footer>
+    <button class="scroller">↑</button>
 </body>
 </html>
