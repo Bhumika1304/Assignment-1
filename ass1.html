@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhumika K S - Personal Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            font-size: 30px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 1rem;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        main {
+            padding: 2rem;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+        .content {
+            display: none;
+        }
+        #home {
+            display: block;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('nav a').click(function(e) {
+                e.preventDefault();
+                var target = $(this).attr('href');
+                $('.content').hide();
+                $(target).show();
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#bio">Bio-data</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="home" class="content">
+            <h1>Welcome to My Personal Website</h1>
+            <p>This website contains my resume and bio-data.</p>
+            <p>Explore to know more about my professional journey and personal details.</p>
+        </div>
+        <div id="resume" class="content">
+            <h1>My Resume</h1>
+            <h2>Current Education</h2>
+            <p>I am Currently pursuing a Bachelor of Engineering (B.E) in Computer Science and Engineering (CSE), 3rd year at Bapuji Institute of engineering and Technology.</p>
+            <h2>Education</h2>
+            Pre schooling(LKG&UKG) and 
+            Schooling (class 1-10) Sri Taralabalu Central School, Davangere.<br>
+            PUC at DR Thimmareddy Foundation PU Girls College.
+            <h3>Bachelor of Engineering in Computer Science</h3>
+            <p>BIET Davangere, 2022-2026</p>
+            <h3>Project: Agriculture Management System</h3>
+            <p>Languages used : HTML,CSS,JS,php and mysql </p>
+            <ul>
+                <li>Developed a agriculture management system using php and MySQL.</li>
+                <li>Worked on front-end .</li>
+            </ul>  
+        </div>
+        <div id="bio" class="content">
+            <h1>My Bio-data</h1>
+            <h2>Personal Information</h2>
+            <p>Name: Bhumika K S</p>
+            <p>Date of Birth: December 13, 2004</p>
+            <p>Address: #1905/45 Vidhyanagar 5th Cross, Davangere, Karnataka, India</p>
+            <p>Email: bhumikaks1312@gmail.com</p>
+            <h2>Skills</h2>
+            <ul>
+                <li>Programming Languages: Java, Python, C (basics)</li>
+                <li>Web Technologies: HTML, CSS, JS</li>
+            </ul>
+            <h2>Hobbies</h2>
+            <ul>
+                <li>Playing Sports like Cricket, Badmintton and Basketball</li>
+                <li>Solving puzzles</li>
+                <li>Listening to songs</li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024  Bhumika K S</p>
+    </footer>
+</body>
+</html>
